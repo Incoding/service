@@ -8,7 +8,6 @@ import com.caucho.burlap.client.BurlapProxyFactory;
 /**
  * Burlap客户端测试代码
  * 
- * @author longgangbai
  * 
  */
 public class BurlapServiceWSClient {

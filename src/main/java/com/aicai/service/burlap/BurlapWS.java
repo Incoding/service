@@ -9,7 +9,6 @@ import com.caucho.burlap.server.BurlapServlet;
  * 
  * 在Burlap中服务端的必须继承BurlapServlet 类同时实现相关的服务的接口
  * 
- * @author longgangbai
  * 
  */
 
