@@ -6,6 +6,10 @@ import java.util.List;
 import com.aicai.service.rmi.PersonEntity;
 import com.aicai.service.rmi.PersonService;
 
+/**
+ * http://www.51testing.com/html/38/225738-222961.html
+ * 
+ */
 public class Client { 
     public static void main(String[] args){ 
         try{ 
