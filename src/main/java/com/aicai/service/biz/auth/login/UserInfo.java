@@ -15,12 +15,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 @SuppressWarnings("serial")
 public class UserInfo extends HttpServlet {
-
-
-    public void getUserInfo() {
-        System.out.println();
+	public void getUserInfo(HttpServletRequest req, HttpServletResponse resp) {
+		// System.out.println("getUserInfo==>");
+		String ip = req.getRemoteAddr();
+		System.out.println(ip);
     }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
@@ -28,9 +27,14 @@ public class UserInfo extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("getUserInfo==>");
-        String ip = req.getRemoteAddr();
-        System.out.println(ip);
+
+		getUserInfo(req, resp);
+		after();
     }
+
+	private void after() {
+		System.out.println("after");
+	}
+
 
 }
