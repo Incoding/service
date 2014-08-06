@@ -48,6 +48,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- rpc -->
 		<dependency>
@@ -55,7 +56,18 @@
 			<artifactId>hessian</artifactId>
 			<version>4.0.7</version>
 		</dependency>
-
+		<!-- server -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.24</version>
+			<scope>runtime</scope>
+		</dependency>
 		<!-- utis -->
 		<dependency>
 			<groupId>commons-codec</groupId>
@@ -68,6 +80,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
