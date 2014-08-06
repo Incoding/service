@@ -1,60 +1,24 @@
 package com.aicai.service.login.common.vo;
 
-import com.alibaba.fastjson.JSONObject;
 
-public class JsonResp {
+public class JsonResp extends BaseJsonResp {
 
+	public static JsonResp	commnError	= new JsonResp("service.common.error",
+												"系统错误,请稍后再试");
+	public static JsonResp	username_null	= new JsonResp(
+												"service.login.usernamenull",
+												"系统错误,请稍后再试");
+	public static JsonResp	pwd_null			= new JsonResp(
+													"service.login.pwdnull",
+												"系统错误,请稍后再试");
+	public static JsonResp	loginWrong	= new JsonResp("service.login.wrong",
+												"用户名或者密码错误");
+	public static JsonResp	success		= new JsonResp("service.login.success",
+												"登陆成功!");
 
-    private boolean isOk;
-
-    private String code;
-
-    private String msg;
-
-    private String result;
-
-    public String toJsonString() {
-        return JSONObject.toJSONString(this);
-    }
-
-    private JsonResp(boolean isOk, String code, String msg, String result) {
-        super();
-        this.isOk = isOk;
-        this.code = code;
-        this.msg = msg;
-        this.result = result;
-    }
-
-    public boolean isOk() {
-        return isOk;
-    }
-
-    public void setOk(boolean isOk) {
-        this.isOk = isOk;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
+	public JsonResp(String code, String msg) {
+		super();
+		this.code = code;
+		this.msg = msg;
+	}
 }

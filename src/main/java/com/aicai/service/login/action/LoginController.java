@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.aicai.service.login.constants.ResponseConstant;
+import com.aicai.service.login.common.vo.JsonResp;
 import com.aicai.service.login.domain.Member;
 import com.aicai.service.login.service.MemberServiceI;
 
@@ -26,25 +26,27 @@ public class LoginController {
 	public String login(String username, String password,
 			HttpServletRequest req,
 			HttpServletResponse resp) {
-		logger.info("user:{} try login", username);
+		logger.info("user:{} 尝试登陆", username);
 		if (username == null) {
-			return "用户名不能为空";
+			return JsonResp.username_null.json();
 		}
 		if (password == null) {
-			return "密码不能为空";
+			return JsonResp.pwd_null.json();
 		}
 		Member member = null;
 		try {
 			member = memberService.login(username, password, req, resp);
 		} catch (Exception e) {
 			logger.info("user:{}登陆发生异常,异常堆栈{}", username, e);
-			return "系统异常,请稍后再试.如继续无法登陆,请联系客服.";
+			new JsonResp("", "");
+			return JsonResp.commnError.json();
 		}
 		if (member == null) {
-            return ResponseConstant.rc.getInfo();
+
+			return JsonResp.loginWrong.json();
 		}
 		logger.info("user:{}登陆成功", username);
-		return "登陆成功";
+		return JsonResp.success.json();
 	}
 
 }
