@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.aicai.service.login.constants.ResponseConstant;
 import com.aicai.service.login.domain.Member;
 import com.aicai.service.login.service.MemberServiceI;
 
@@ -40,7 +41,7 @@ public class LoginController {
 			return "系统异常,请稍后再试.如继续无法登陆,请联系客服.";
 		}
 		if (member == null) {
-			return "用户名或者密码错误!";
+            return ResponseConstant.rc.getInfo();
 		}
 		logger.info("user:{}登陆成功", username);
 		return "登陆成功";

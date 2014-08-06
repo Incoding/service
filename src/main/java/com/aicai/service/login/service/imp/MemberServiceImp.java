@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.aicai.service.login.dao.MemberDao;
 import com.aicai.service.login.domain.Member;
-import com.aicai.service.login.exception.DbException;
+import com.aicai.service.login.exception.BaseException;
 import com.aicai.service.login.service.MemberServiceI;
 
 @Service
@@ -32,7 +32,7 @@ public class MemberServiceImp implements MemberServiceI {
 		try {
 			memberDao.login(username, md5pwd);
 		} catch (Exception e) {
-			throw new DbException(e.getMessage(), e);
+            throw new BaseException(e.getMessage(), e);
 		}
 		return member;
 	}
