@@ -37,11 +37,11 @@
 					<downloadJavadocs>false</downloadJavadocs>
 				</configuration>
 			</plugin>
-			
 <!-- 			放置到制定目录 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
 				<configuration>
 					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
 					<webappDirectory>${replacer.outputBasedir}/${replacer.outputDir}</webappDirectory>
