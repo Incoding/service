@@ -28,25 +28,24 @@ public class LoginController {
 			HttpServletResponse resp) {
 		logger.info("user:{} 尝试登陆", username);
 		if (username == null) {
-			return JsonResp.username_null.json();
+			return JsonResp.USERNAME_NULL.json();
 		}
 		if (password == null) {
-			return JsonResp.pwd_null.json();
+			return JsonResp.PWD_NULL.json();
 		}
 		Member member = null;
 		try {
 			member = memberService.login(username, password, req, resp);
 		} catch (Exception e) {
 			logger.info("user:{}登陆发生异常,异常堆栈{}", username, e);
-			new JsonResp("", "");
-			return JsonResp.commnError.json();
+			return JsonResp.COMMN_ERROR.json();
 		}
 		if (member == null) {
-
-			return JsonResp.loginWrong.json();
+			return JsonResp.LOGIN_WRONG.json();
 		}
+        new JsonResp().commonError("未知异常").json();
 		logger.info("user:{}登陆成功", username);
-		return JsonResp.success.json();
+		return JsonResp.LOGIN_SUCCESS.json();
 	}
 
 }
