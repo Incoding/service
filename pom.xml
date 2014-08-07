@@ -5,11 +5,14 @@
 	<groupId>com.aicai</groupId>
 	<artifactId>service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>service</name>
 
 	<properties>
+<!-- 		修改为自己tomcat 扫描目录 -->
+		<replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir>
+		<replacer.outputDir>ROOT</replacer.outputDir>
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.3.RELEASE</spring.version>
@@ -32,6 +35,17 @@
 				<configuration>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+			
+<!-- 			放置到制定目录 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+					<webappDirectory>${replacer.outputBasedir}/${replacer.outputDir}</webappDirectory>
+					<warSourceDirectory>${replacer.outputBasedir}/${replacer.outputDir}</warSourceDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
