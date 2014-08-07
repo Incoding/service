@@ -10,7 +10,7 @@ public class BaseJsonResp {
 	protected String	msg;
 
 	public static void main(String[] args) {
-        JsonResp json = new JsonResp("service.login.success", "登陆成功");
+        LoginResp json = new LoginResp("service.login.success", "登陆成功");
 		System.out.println(json.json());
 	}
 
