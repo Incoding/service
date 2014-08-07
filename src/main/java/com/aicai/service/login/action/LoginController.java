@@ -38,12 +38,11 @@ public class LoginController {
 			member = memberService.login(username, password, req, resp);
 		} catch (Exception e) {
 			logger.info("user:{}登陆发生异常,异常堆栈{}", username, e);
-			return LoginResp.COMMN_ERROR.json();
+            return new LoginResp().commonError("未知错误，请稍后再试。").json();
 		}
 		if (member == null) {
 			return LoginResp.LOGIN_WRONG.json();
 		}
-        new LoginResp().commonError("未知异常").json();
 		logger.info("user:{}登陆成功", username);
 		return LoginResp.LOGIN_SUCCESS.json();
 	}
