@@ -19,25 +19,25 @@
 	default-lazy-init="true">
 	<context:annotation-config />
 
-	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" -->
-	<!-- destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver" -->
-	<!-- p:url="jdbc:mysql://127.0.0.1:3306/service?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=GBK" -->
-	<!-- p:username="root" p:password="root" /> -->
 <!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" -->
 <!-- 		destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver" -->
-<!-- 		p:url="jdbc:mysql://127.0.0.1:3306/csc_sns_dev?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=GBK" -->
+<!-- 		p:url="jdbc:mysql://127.0.0.1:3306/service?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=GBK" -->
 <!-- 		p:username="root" p:password="root" /> -->
-<!-- 	<bean id="txManager" -->
-<!-- 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->
-<!-- 		<property name="dataSource" ref="dataSource" /> -->
-<!-- 	</bean> -->
-<!-- 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
-<!-- 		<property name="dataSource" ref="dataSource" /> -->
-<!-- 		<property name="configLocation" value="classpath:/db/mybatis-config.xml" /> -->
-<!-- 	</bean> -->
-<!-- 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"> -->
-<!-- 		<constructor-arg name="sqlSessionFactory" ref="sessionFactory" /> -->
-<!-- 	</bean> -->
-<!-- 	<tx:annotation-driven transaction-manager="txManager" /> -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver"
+		p:url="jdbc:mysql://127.0.0.1:3306/csc_sns_dev?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=GBK"
+		p:username="root" p:password="root" />
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/db/mybatis-config.xml" />
+	</bean>
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" />
 
 </beans>
