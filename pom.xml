@@ -11,7 +11,8 @@
 
 	<properties>
 		<!-- 修改为自己tomcat 扫描目录 -->
-		<replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir>
+		<replacer.outputBasedir>D:/www/service</replacer.outputBasedir>
+<!-- 		<replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir> -->
 		<replacer.outputDir>ROOT</replacer.outputDir>
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -91,6 +92,18 @@
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.1.1</version>
+		</dependency>
+			<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
