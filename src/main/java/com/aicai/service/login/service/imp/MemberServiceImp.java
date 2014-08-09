@@ -30,7 +30,7 @@ public class MemberServiceImp implements MemberServiceI {
 		String md5pwd = DigestUtils.md5Hex(password);
 		// TODO dao 到数据库中查找用户名和密码 memberdao.findUser(username,pwd);
 		try {
-			memberDao.login(username, md5pwd);
+			member = memberDao.login(username, md5pwd);
 		} catch (Exception e) {
             throw new BaseException(e.getMessage(), e);
 		}

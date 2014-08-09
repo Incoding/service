@@ -1,12 +1,12 @@
 package com.aicai.service.login.domain;
 
 public class Member {
-	private String	id;
-	private String	userId;
-	private String	username;
-	private String	password;
-	private String	email;
-	private String	age;
+	private String	id			= "";
+	private String	userId		= "";
+	private String	username	= "";
+	private String	password	= "";
+	private String	email		= "";
+	private String	age			= "";
 
 	public String getUsername() {
 		return username;
@@ -80,6 +80,5 @@ public class Member {
 			return false;
 		return true;
 	}
-
 
 }

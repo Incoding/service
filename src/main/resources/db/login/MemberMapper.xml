@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper  
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="service.member">  
+  <resultMap type="com.aicai.service.login.domain.Member" id="loginmember">
+  	<result property="id" column="id"/>
+  	<result property="userId" column="userId"/>
+  	<result property="username" column="username"/>
+  	<result property="password" column="pwd"/>
+  	<result property="email" column="email"/>
+  	<result property="age" column="age"/>
+  </resultMap>
+ 
+ <select id="memberlogin" resultMap="loginmember" parameterType="hashmap">
+ 	SELECT * FROM service.member WHERE username = #{username} and pwd = #{password} limit 1;
+ </select>
+ 
+</mapper> 

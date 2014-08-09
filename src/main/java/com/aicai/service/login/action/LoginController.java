@@ -3,6 +3,7 @@ package com.aicai.service.login.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +41,15 @@ public class LoginController {
 			logger.info("user:{}登陆发生异常,异常堆栈{}", username, e);
             return new LoginResp().commonError("未知错误，请稍后再试。").json();
 		}
-		if (member == null) {
+		if (member == null || member.getUserId() == "") {
 			return LoginResp.LOGIN_WRONG.json();
 		}
 		logger.info("user:{}登陆成功", username);
 		return LoginResp.LOGIN_SUCCESS.json();
 	}
 
+	public static void main(String[] args) {
+		String md5pwd = DigestUtils.md5Hex("123");
+		System.out.println(md5pwd);
+	}
 }
