@@ -37,7 +37,7 @@
 		</property>
 	</bean>
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" p:driverClassName="com.mysql.jdbc.Driver"
+		destroy-method="close" p:driverClassName="${service.jdbc.driver}"
 		p:url="${service.jdbc.url}"
 		p:username="${service.jdbc.username}" p:password="${service.jdbc.password}" />
 	<bean id="txManager"
