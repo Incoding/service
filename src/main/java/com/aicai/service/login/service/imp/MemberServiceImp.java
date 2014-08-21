@@ -34,6 +34,13 @@ public class MemberServiceImp implements MemberServiceI {
 		} catch (Exception e) {
             throw new BaseException(e.getMessage(), e);
 		}
+		if (member == null) {
+			// 返货modelresult可以判断,是返回了异常,还是返回正确结果,还是返回null.
+			// 结合后端人员一起处理返回值,isBackResp
+			return new Member();
+		}
+			// 重新刷新cookie,防止登陆过期
+
 		return member;
 	}
 }

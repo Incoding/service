@@ -8,6 +8,11 @@
 
 	<web>
 		<link target="/">
+			<dir name="D:/workspace2012-11-12/service/target/m2e-wtp/web-resources">
+				<exclude name="/"/>
+			</dir>
+		</link>
+		<link target="/">
 			<dir name="D:/workspace2012-11-12/service/www/service/ROOT">
 			</dir>
 		</link>
