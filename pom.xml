@@ -11,8 +11,8 @@
 
 	<properties>
 		<!-- 修改为自己tomcat 扫描目录 -->
-		<replacer.outputBasedir>D:/www/service</replacer.outputBasedir>
-<!-- 		<replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir> -->
+<!-- 		<replacer.outputBasedir>D:/www/service</replacer.outputBasedir> -->
+		<replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir>
 		<replacer.outputDir>ROOT</replacer.outputDir>
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -52,6 +52,30 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 				<configuration>
+					<webResources>
+						<resource>
+							<filtering>false</filtering>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>**/*.ico</include>
+								<include>**/*.jpg</include>
+								<include>**/*.png</include>
+								<include>**/*.gif</include>
+								<include>**/*.swf</include>
+								<include>**/*.class</include>
+								<include>**/*.svn</include>
+								<include>**/*.jar</include>
+							</includes>
+						</resource>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webapp</directory>
+						</resource>
+					</webResources>
+					<packagingExcludes>
+						WEB-INF/lib/commons-logging-*.jar,
+						%regex[WEB-INF/lib/log4j-(?!over-slf4j).*.jar]
+					</packagingExcludes>
 					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
 					<webappDirectory>${replacer.outputBasedir}/${replacer.outputDir}</webappDirectory>
 					<warSourceDirectory>${replacer.outputBasedir}/${replacer.outputDir}</warSourceDirectory>
