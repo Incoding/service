@@ -12,6 +12,10 @@ public class ErrorCode implements Serializable {
     private String key;
     private String msg;
 
+	public static ErrorCode commonError(String msg) {
+		return new ErrorCode(BUSINESS_COMMON_ERROR, msg);
+	}
+
     public String getId() {
         return key;
     }

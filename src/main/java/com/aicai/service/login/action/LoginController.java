@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aicai.service.login.common.vo.LoginResp;
 import com.aicai.service.login.domain.Member;
+import com.aicai.service.login.domain.modelresult.ModelResult;
 import com.aicai.service.login.service.MemberServiceI;
 
 @Controller
@@ -34,13 +35,18 @@ public class LoginController {
 		if (password == null) {
 			return LoginResp.PWD_NULL.json();
 		}
-		Member member = null;
-		try {
-			member = memberService.login(username, password, req, resp);
-		} catch (Exception e) {
-			logger.info("user:{}登陆发生异常,异常堆栈{}", username, e);
-            return new LoginResp().commonError("未知错误，请稍后再试。").json();
+		ModelResult<Member> modelResult = null;
+		modelResult = memberService.login(username, password, req, resp);
+		if (modelResult.isFail()) {
+			logger.info("查询错误,异常堆栈:{}", modelResult.getDetailStack());
+			if (modelResult.isBackerResponse()) {
+				return new LoginResp().commonError(
+						modelResult.getErrorCode().getInfo()).json();
+			}
+			return LoginResp.COMMN_ERROR.json();
 		}
+		Member member = modelResult.getModel();
+
 		if (member == null || member.getUserId() == "") {
 			return LoginResp.LOGIN_WRONG.json();
 		}
@@ -52,4 +58,5 @@ public class LoginController {
 		String md5pwd = DigestUtils.md5Hex("123");
 		System.out.println(md5pwd);
 	}
+
 }

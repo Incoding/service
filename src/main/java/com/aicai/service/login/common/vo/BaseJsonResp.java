@@ -47,7 +47,7 @@ public class BaseJsonResp {
      * @param msg
      * @return
      */
-    public BaseJsonResp commonError(String msg) {
+	public BaseJsonResp commonError(String msg) {
         this.setCode(SERVICE_COMMON_ERROR);
         this.setMsg(msg);
         return this;
@@ -57,7 +57,7 @@ public class BaseJsonResp {
      * @param msg
      * @return
      */
-    public BaseJsonResp commonSucce(String msg) {
+	public BaseJsonResp commonSucce(String msg) {
         this.setCode(SERVICE_COMMON_SUCCESS);
         this.setMsg(msg);
         return this;
