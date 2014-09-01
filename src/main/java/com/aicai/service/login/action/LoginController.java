@@ -29,7 +29,6 @@ public class LoginController {
 			HttpServletRequest req,
 			HttpServletResponse resp) {
 		logger.info("user:{} 尝试登陆", username);
-
         if (username.equals("kk")) {
             //            try {
             //                resp.sendError(404);
