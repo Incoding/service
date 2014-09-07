@@ -12,8 +12,8 @@ public class ModelResult<T> implements Serializable {
 	transient Logger			logger				= LoggerFactory
 															.getLogger(ModelResult.class);
 	private T					model;
-	private boolean				isSuccess;
-	private boolean				isCache;
+	private boolean				isSuccess			= true;
+	private boolean				isCache				= false;
 	/**
 	 * 处错误时候,是否由后端人员返回信息给用户,如果为true则返回backResponse
 	 */

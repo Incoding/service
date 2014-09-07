@@ -10,6 +10,7 @@
 			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 				<!-- 处理使用@ResponseBody 响应json乱码 -->
 <!-- 			这个bean得顺序要在<mvc:annotation-driven /> 之上 -->
+		<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
 		<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">  
 	    <property name="messageConverters">  
 	        <list>  
@@ -23,7 +24,7 @@
 	        </list>  
 	    </property>  
 	</bean>
-	<mvc:annotation-driven />
+<!-- 	<mvc:annotation-driven /> -->
 	<mvc:default-servlet-handler />
 	<context:component-scan base-package="com.aicai.service.*" />
 

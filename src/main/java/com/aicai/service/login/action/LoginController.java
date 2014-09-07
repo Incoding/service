@@ -29,15 +29,15 @@ public class LoginController {
 			HttpServletRequest req,
 			HttpServletResponse resp) {
 		logger.info("user:{} 尝试登陆", username);
-        if (username.equals("kk")) {
-            //            try {
-            //                resp.sendError(404);
-            //            } catch (IOException e) {
-            //                // TODO Auto-generated catch block
-            //                e.printStackTrace();
-            //            }
-            throw new RuntimeException("123");
-        }
+		// if (username.equals("kk")) {
+		// // try {
+		// // resp.sendError(404);
+		// // } catch (IOException e) {
+		// // // TODO Auto-generated catch block
+		// // e.printStackTrace();
+		// // }
+		// throw new RuntimeException("123");
+		// }
 		if (username == null) {
 			return LoginResp.USERNAME_NULL.json();
 		}
