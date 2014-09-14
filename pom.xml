@@ -11,16 +11,29 @@
 
 	<properties>
 		<!-- 修改为自己tomcat 扫描目录 -->
-		<replacer.outputBasedir>D:/www/service</replacer.outputBasedir>
+<!-- 		<replacer.outputBasedir>D:/www/service</replacer.outputBasedir> -->
 <!-- 		<replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir> -->
-<!-- 		<replacer.outputBasedir>webapps</replacer.outputBasedir> -->
+		<replacer.outputBasedir>webapps</replacer.outputBasedir>
 		<replacer.outputDir>ROOT</replacer.outputDir>
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.3.RELEASE</spring.version>
 	</properties>
 	<build>
-<!-- 	<outputDirectory>${replacer.outputBasedir}/ROOT/WEB-INF/classes</outputDirectory> -->
+	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+			<targetPath>${basedir}/webapps/ROOT/WEB-INF/classes/</targetPath>
+		</resource>
+		<resource>
+			<directory>src/main/webapp</directory>
+			<targetPath>${basedir}/webapps/ROOT/</targetPath>
+		</resource>
+	</resources>
+	<outputDirectory>${replacer.outputBasedir}/ROOT/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
