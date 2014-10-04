@@ -6,6 +6,7 @@ public class LoginResp extends BaseJsonResp {
     public static final LoginResp COMMN_ERROR = new LoginResp("service.common.error", "系统错误,请稍后再试。");
 
     public static final LoginResp USERNAME_NULL = new LoginResp("service.login.usernamenull", "用户名不能为空。");
+//    public static final LoginResp USERNAME_NULL = new LoginResp("service.login.usernamenull", "1231231");
 
     public static final LoginResp PWD_NULL = new LoginResp("service.login.pwdnull", "密码不能为空。");
 

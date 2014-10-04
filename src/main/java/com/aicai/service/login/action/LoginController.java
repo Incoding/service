@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,15 +30,6 @@ public class LoginController {
 			HttpServletRequest req,
 			HttpServletResponse resp) {
 		logger.info("user:{} 尝试登陆", username);
-		// if (username.equals("kk")) {
-		// // try {
-		// // resp.sendError(404);
-		// // } catch (IOException e) {
-		// // // TODO Auto-generated catch block
-		// // e.printStackTrace();
-		// // }
-		// throw new RuntimeException("123");
-		// }
 		if (username == null) {
 			return LoginResp.USERNAME_NULL.json();
 		}
@@ -55,7 +47,6 @@ public class LoginController {
 			return LoginResp.COMMN_ERROR.json();
 		}
 		Member member = modelResult.getModel();
-
 		if (member == null || member.getUserId() == "") {
 			return LoginResp.LOGIN_WRONG.json();
 		}

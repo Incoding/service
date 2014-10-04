@@ -87,7 +87,7 @@ public class JunitAction {
 		final ModelAndView mav = this.excuteAction(request, response);
 		// Assert.assertEquals("userManager/userlist", mav.getViewName());
 		// String msg = (String) request.getAttribute("msg");
-		System.out.println(mav);
+		System.out.println("result==>"+mav);
 	}
 
 	@Test
