@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,6 +26,7 @@ import com.aicai.service.login.action.LoginController;
 
 /**
  * http://andy-ghg.iteye.com/blog/1772215 </br>
+ * http://jinnianshilongnian.iteye.com/blog/2007180</br>
  * http://jinnianshilongnian.iteye.com/blog/2004660</br>
  *
  */
@@ -58,5 +60,11 @@ public class TestControllerTest {
 		System.out.println("result==>"+viewName);
 		System.out.println("result==>");
 		System.out.println(model);
+	}
+	@Test
+	public void testViewResponse() throws Exception {
+		MockHttpServletRequestBuilder builder = MockMvcRequestBuilders
+				.get("/testjsp.htm");
+		MvcResult result = mockMvc.perform(builder).andDo(MockMvcResultHandlers.print()).andReturn();
 	}
 }
