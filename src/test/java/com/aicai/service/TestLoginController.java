@@ -31,7 +31,7 @@ import com.aicai.service.login.action.LoginController;
     @ContextConfiguration(name = "parent", locations = "classpath:applicationContext.xml"),  
     @ContextConfiguration(name = "child", locations = "classpath:dispatcher-servlet.xml")  
 }) 
-public class JunitActionSample2 {
+public class TestLoginController {
 	@Autowired
 	private WebApplicationContext	wac;
 	private MockMvc					mockMvc;
@@ -42,24 +42,18 @@ public class JunitActionSample2 {
 		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 	}
 
+	/**测试响应json
+	 * @throws Exception
+	 */
 	@Test
 	public void testView() throws Exception {
-		// MvcResult result =
-		// mockMvc.perform(MockMvcRequestBuilders.get("/user/1"))
-		// .andExpect(MockMvcResultMatchers.view().name("user/view"))
-		// .andExpect(MockMvcResultMatchers.model().attributeExists("user"))
-		// .andDo(MockMvcResultHandlers.print())
-		// .andReturn();
-		// Assert.assertNotNull(result.getModelAndView().getModel().get("user"));
 		MockHttpServletRequestBuilder builder = MockMvcRequestBuilders
 				.get("/login.htm");
 		builder.param("username", "kk");
 		builder.param("password", "123");
 		MvcResult result = mockMvc.perform(builder).andReturn();
-		result.getResponse().setCharacterEncoding("UTF-8");
 		MockHttpServletResponse response = result.getResponse();
-		response.setCharacterEncoding("UTF-8");
 		String contentAsString = response.getContentAsString();
-		System.out.println("result ==>" +new String(contentAsString.getBytes()));
+		System.out.println("result ==>" +contentAsString);
 	}
 }
