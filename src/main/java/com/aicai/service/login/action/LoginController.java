@@ -4,10 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -46,13 +48,13 @@ public class LoginController {
 			return LoginResp.COMMN_ERROR.json();
 		}
 		Member member = modelResult.getModel();
-
 		if (member == null || member.getUserId() == "") {
 			return LoginResp.LOGIN_WRONG.json();
 		}
 		logger.info("user:{}登陆成功", username);
 		return LoginResp.LOGIN_SUCCESS.json();
 	}
+	
 
 	public static void main(String[] args) {
 		String md5pwd = DigestUtils.md5Hex("123");

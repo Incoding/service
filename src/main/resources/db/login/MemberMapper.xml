@@ -13,7 +13,12 @@
   </resultMap>
  
  <select id="memberlogin" resultMap="loginmember" parameterType="hashmap">
- 	SELECT * FROM service.member WHERE username = #{username} and pwd = #{password} limit 1;
+ 	<include refid="service.base.selectAll"/>
+ 	service.member WHERE username = #{username} and pwd = #{password} limit 1;
  </select>
  
 </mapper> 
+
+
+
+

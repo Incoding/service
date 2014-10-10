@@ -105,7 +105,11 @@
 <!-- 		<error-code>502</error-code> -->
 <!-- 		<location>/commons/404.jsp</location> -->
 <!-- 	</error-page>   -->
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> branch 'master' of https://github.com/Incoding/service
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
