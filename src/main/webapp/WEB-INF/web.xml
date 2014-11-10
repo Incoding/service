@@ -80,7 +80,17 @@
        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
-
+	<!--  测试servlet 顺序 -->
+	<servlet>
+		<servlet-name>testOrder</servlet-name>
+		<servlet-class>com.aicai.service.test.servlet.ServletInitOrder</servlet-class>
+<!-- 		<load-on-startup>2</load-on-startup> -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testOrder</servlet-name>
+		<url-pattern>/servletinit</url-pattern>
+	</servlet-mapping>
+	
 <!-- 	<error-page> -->
 <!-- 		<error-code>400</error-code> -->
 <!-- 		<location>/commons/400.jsp</location> -->
