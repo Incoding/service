@@ -2,18 +2,18 @@
 <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
 	<classpath>
-		<dir name="/home/kk/git/service/webapps/ROOT/WEB-INF/classes">
+		<dir name="D:/workspace2012-11-12/service/webapps/ROOT/WEB-INF/classes">
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<dir name="/home/kk/git/service/target/m2e-wtp/web-resources">
+			<dir name="D:/workspace2012-11-12/service/target/m2e-wtp/web-resources">
 				<exclude name="/"/>
 			</dir>
 		</link>
 		<link target="/">
-			<dir name="/home/kk/git/service/webapps/ROOT">
+			<dir name="D:/workspace2012-11-12/service/webapps/ROOT">
 			</dir>
 		</link>
 	</web>

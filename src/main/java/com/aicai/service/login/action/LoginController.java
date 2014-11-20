@@ -46,7 +46,7 @@ public class LoginController {
 			return LoginResp.COMMN_ERROR.json();
 		}
 		Member member = modelResult.getModel();
-		if (member == null || member.getUserId() == "") {
+		if (member == null || "".equals(member.getUserId())) {
 			return LoginResp.LOGIN_WRONG.json();
 		}
 		logger.info("user:{}登陆成功", username);
