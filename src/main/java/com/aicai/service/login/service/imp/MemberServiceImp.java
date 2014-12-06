@@ -26,9 +26,6 @@ public class MemberServiceImp implements MemberServiceI {
 	@Autowired
 	private MemberDao	memberDao;
 
-	/* (non-Javadoc)
-	 * @see com.aicai.service.login.service.MemberI#login(java.lang.String, java.lang.String, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
 	@Override
 	public ModelResult<Member> login(String username, String password,
 			HttpServletRequest req, HttpServletResponse resp) {
@@ -64,7 +61,6 @@ public class MemberServiceImp implements MemberServiceI {
 //		刷新membercache,中member信息
 //		memClient.set(memKey,LoginConstant.getSSO_LOGIN_TIME_OUT(), member);//验证通过，返回member对象之前，刷新下缓存，以免超时
 //		刷新cookie信息;
-
 		return modelResult.withModel(member);
 	}
 
