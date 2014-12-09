@@ -1,12 +1,12 @@
-package com.aicai.service.rmi.server;
+package com.aicai.service.test.rmi.server;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.aicai.service.rmi.PersonEntity;
-import com.aicai.service.rmi.PersonService;
+import com.aicai.service.test.rmi.PersonEntity;
+import com.aicai.service.test.rmi.PersonService;
 
 //此为远程对象的实现类，须继承UnicastRemoteObject 
 public class PersonServiceImpl extends UnicastRemoteObject implements PersonService { 

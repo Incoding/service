@@ -1,4 +1,4 @@
-package com.aicai.service.hessian;
+package com.aicai.service.test.hessian;
 
 public class HelloWorld implements HelloWorldService {
 

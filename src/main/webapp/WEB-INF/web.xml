@@ -46,7 +46,7 @@
 	<!-- 测试servlet -->
 	<servlet>
 		<servlet-name>userInfo</servlet-name>
-		<servlet-class>com.aicai.service.biz.auth.login.UserInfo</servlet-class>
+		<servlet-class>com.aicai.service.test.biz.auth.login.UserInfo</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>userInfo</servlet-name>
@@ -54,7 +54,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>burlapWs</servlet-name>
-		<servlet-class>com.aicai.service.burlap.BurlapWS</servlet-class>
+		<servlet-class>com.aicai.service.test.burlap.BurlapWS</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>burlapWs</servlet-name>
@@ -68,11 +68,11 @@
        <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
        <init-param>
            <param-name>home-api</param-name>
-           <param-value>com.aicai.service.hessian.HelloWorldService</param-value>
+           <param-value>com.aicai.service.test.hessian.HelloWorldService</param-value>
        </init-param>
        <init-param>
            <param-name>home-class</param-name>
-           <param-value>com.aicai.service.hessian.HelloWorld</param-value>
+           <param-value>com.aicai.service.test.hessian.HelloWorld</param-value>
        </init-param>
     </servlet>
     <servlet-mapping>

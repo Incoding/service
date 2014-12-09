@@ -1,9 +1,9 @@
-package com.aicai.service.rmi.server;
+package com.aicai.service.test.rmi.server;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
-import com.aicai.service.rmi.PersonService;
+import com.aicai.service.test.rmi.PersonService;
 
 public class Server{ 
 	 

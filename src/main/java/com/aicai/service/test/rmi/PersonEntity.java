@@ -1,4 +1,4 @@
-package com.aicai.service.rmi;
+package com.aicai.service.test.rmi;
 
 import java.io.Serializable;
 
