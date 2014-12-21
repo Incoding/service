@@ -6,7 +6,16 @@
 </head>
 <body>
 
-<form action=" http://localhost:11029/service/test/testupload.htm" enctype="multipart/form-data" method="post">
+
+<form action="http://localhost:11029/service/test/testupload.htm" enctype="multipart/form-data" method="post">
+<input name = "file1" type="file"/>
+<input name = "file2" type="file"/>
+<input name = "file3" type="file"/>
+<input type="submit" value="上传" />
+</form>
+
+
+<form action=" http://localhost:8080/service/test/uploadmultipart.htm" enctype="multipart/form-data" method="post">
 <input name = "file1" type="file"/>
 <input name = "file2" type="file"/>
 <input name = "file3" type="file"/>

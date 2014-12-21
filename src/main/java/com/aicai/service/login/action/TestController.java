@@ -19,8 +19,13 @@ public class TestController {
 	private ServletContext	servletContext;
 	@RequestMapping(value="testjsp")
 	public String getjsp(Model model){
-		model.addAttribute("hello", "world2");
+		model.addAttribute("hello", "world1");
+		print();
 		return "/test/test";
+	}
+
+	private void print() {
+		System.out.println("hello world 3");
 	}
 
 	/**

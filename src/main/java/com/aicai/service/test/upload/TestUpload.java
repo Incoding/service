@@ -1,4 +1,4 @@
-package com.aicai.service.test;
+package com.aicai.service.test.upload;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class TestUpload {
@@ -36,4 +38,11 @@ public class TestUpload {
         }
         
     }
+    @RequestMapping("test/uploadmultipart")
+	public void upload(@RequestParam("file1")MultipartFile file,@RequestParam("file2")MultipartFile file2,@RequestParam("file3")MultipartFile file3) {
+		System.out.println(file.getName());
+		System.out.println(file2.getName());
+		System.out.println(file3.getName());
+		return;
+	}
 }

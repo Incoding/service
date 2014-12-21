@@ -11,9 +11,9 @@
 
 	<properties>
 		<!-- 修改为自己tomcat 扫描目录 -->
-		<!-- <replacer.outputBasedir>D:/www/service</replacer.outputBasedir> -->
+		<replacer.outputBasedir>D:/www/service</replacer.outputBasedir>
 		<!-- <replacer.outputBasedir>/home/kk/www/service</replacer.outputBasedir> -->
-		<replacer.outputBasedir>webapps</replacer.outputBasedir>
+		<!-- <replacer.outputBasedir>webapps</replacer.outputBasedir> -->
 		<replacer.outputDir>ROOT</replacer.outputDir>
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,17 +27,18 @@
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/*.*</include>
-				</includes>
-				<targetPath>${basedir}/webapps/ROOT/WEB-INF/classes/</targetPath>
-			</resource>
-			<resource>
-				<directory>src/main/webapp</directory>
-				<targetPath>${basedir}/webapps/ROOT/</targetPath>
+				<excludes>
+					<exclude>filter/</exclude>
+				</excludes>
+				<filtering>true</filtering>
 			</resource>
 		</resources>
-		<outputDirectory>${replacer.outputBasedir}/ROOT/WEB-INF/classes</outputDirectory>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+			</testResource>
+		</testResources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -66,40 +67,42 @@
 				</configuration>
 			</plugin>
 			<!-- 放置到制定目录 -->
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-war-plugin</artifactId> -->
-<!-- 				<version>2.1.1</version> -->
-<!-- 				<configuration> -->
-<!-- 					<webResources> -->
-<!-- 						<resource> -->
-<!-- 							<filtering>false</filtering> -->
-<!-- 							<directory>src/main/webapp</directory> -->
-<!-- 							<includes> -->
-<!-- 								<include>**/*.ico</include> -->
-<!-- 								<include>**/*.jpg</include> -->
-<!-- 								<include>**/*.png</include> -->
-<!-- 								<include>**/*.gif</include> -->
-<!-- 								<include>**/*.swf</include> -->
-<!-- 								<include>**/*.class</include> -->
-<!-- 								<include>**/*.svn</include> -->
-<!-- 								<include>**/*.jar</include> -->
-<!-- 							</includes> -->
-<!-- 						</resource> -->
-<!-- 						<resource> -->
-<!-- 							<filtering>true</filtering> -->
-<!-- 							<directory>src/main/webapp</directory> -->
-<!-- 						</resource> -->
-<!-- 					</webResources> -->
-<!-- 					<packagingExcludes> -->
-<!-- 						WEB-INF/lib/commons-logging-*.jar, -->
-<!-- 						%regex[WEB-INF/lib/log4j-(?!over-slf4j).*.jar] -->
-<!-- 					</packagingExcludes> -->
-<!-- 					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml> -->
-<!-- 					<webappDirectory>${replacer.outputBasedir}/${replacer.outputDir}</webappDirectory> -->
-<!-- 					<warSourceDirectory>${replacer.outputBasedir}/${replacer.outputDir}</warSourceDirectory> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<webResources>
+					<!-- 在webResources节点下,配置了几个resource,在打包得时候就会提示copy几次 -->
+						<resource>
+							<filtering>false</filtering>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>**/*.ico</include>
+								<include>**/*.jpg</include>
+								<include>**/*.png</include>
+								<include>**/*.gif</include>
+								<include>**/*.swf</include>
+								<include>**/*.class</include>
+								<include>**/*.svn</include>
+								<include>**/*.jar</include>
+							</includes>
+						</resource>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webapp</directory>
+						</resource>
+					</webResources>
+					<packagingExcludes>
+						WEB-INF/lib/commons-logging-*.jar,
+						%regex[WEB-INF/lib/log4j-(?!over-slf4j).*.jar]
+					</packagingExcludes>
+					<!-- 2.4插件可以去掉这行 -->
+					<!-- <webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml> -->
+					<webappDirectory>${replacer.outputBasedir}/${replacer.outputDir}</webappDirectory>
+					<warSourceDirectory>${replacer.outputBasedir}/${replacer.outputDir}</warSourceDirectory>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -129,6 +132,11 @@
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
 		</dependency>
 		<!-- rpc -->
 		<dependency>

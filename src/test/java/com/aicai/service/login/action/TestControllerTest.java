@@ -58,7 +58,7 @@ public class TestControllerTest {
 		String viewName = modelAndView.getViewName();
 		Map<String, Object> model = modelAndView.getModel();
 		System.out.println("result==>"+viewName);
-		System.out.println("result==>");
+		System.out.println("result==>"+model);
 		System.out.println(model);
 	}
 	@Test
