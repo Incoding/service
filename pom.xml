@@ -100,7 +100,7 @@
 <!-- 					2.4插件可以去掉这行 -->
 					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
 					<webappDirectory>${replacer.outputBasedir}/${replacer.outputDir}</webappDirectory>
-					<warSourceDirectory>${replacer.outputBasedir}/${replacer.outputDir}</warSourceDirectory>
+<!-- 					<warSourceDirectory>${replacer.outputBasedir}/${replacer.outputDir}</warSourceDirectory> -->
 				</configuration>
 			</plugin>
 			<plugin>

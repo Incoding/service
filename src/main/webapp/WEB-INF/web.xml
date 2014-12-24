@@ -90,7 +90,15 @@
 		<servlet-name>testOrder</servlet-name>
 		<url-pattern>/servletinit</url-pattern>
 	</servlet-mapping>
-	
+<!-- 	测试servlet 下载 -->
+	  <servlet>
+        <servlet-name>download_servlet</servlet-name>
+        <servlet-class> com.aicai.service.test.upload.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>download_servlet</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
 <!-- 	<error-page> -->
 <!-- 		<error-code>400</error-code> -->
 <!-- 		<location>/commons/400.jsp</location> -->
