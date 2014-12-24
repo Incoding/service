@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
  * http://localhost:8080/service/download </br>
  * 关于请求后是hold,还是直接下载得讨论:
  * http://atell.iteye.com/blog/1172478</br>
+ * http://www.verydemo.com/demo_c230_i18246.html</br>
  * ie下会有部分请求数据响应,然后服务端hold,等待浏览器点击确认或者取消.才会继续下载数据</br>
  * firefox 31,不会hold,请求后服务器直接传输数据.客户端弹出,保存或者取消确认框得时候也会传输数据的</br>
  * chrome 34 直接下载,不弹出确认和取消的弹框</br>
