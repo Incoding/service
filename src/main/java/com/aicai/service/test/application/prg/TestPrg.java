@@ -4,7 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 应用prg模式防止表单重复提交
+ * 应用prg模式防止表单重复提交</br>
+ * http://www.bkjia.com/jingyan/471187.html
+ * http://my.oschina.net/imot/blog/143120
  *
  */
 @Controller
