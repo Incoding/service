@@ -16,7 +16,7 @@ public class TestPrg {
 	
 	@RequestMapping("prg/post")
 	public String postMethod(String name,String amount) {
-		System.out.println(name+"购买了"+amount+"元");
+		System.out.println(name+"购买了"+amount+"元ss");
 		return "redirect:/prg/get.htm";
 	}
 	@RequestMapping("prg/get")

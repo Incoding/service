@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.objectFactory" value="struts" />
+	<package name="hs" extends="struts-default">
+<!--     <action name="ioc" class="iocAction"> -->
+<!--     		<result name="ioc">\pages\test\application\struts2\test.jsp</result> -->
+<!--      </action> -->
+    <action name="ioc" class="com.aicai.service.test.mvc.IocAction">
+    		<result name="ioc">\pages\test\application\struts2\test.jsp</result>
+     </action>
+</package>
+	
+</struts>

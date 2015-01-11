@@ -8,7 +8,7 @@
 <form action="http://localhost:8080/service/prg/post.htm" method="post">
 	<input type="text" name = "name"/>
 	<input type="text" name = "amount"/>
-	<input type="submit" value="提交"/>
+	<input type="submit" value="提交123"/>
 </form>
 </body>
 </html>
