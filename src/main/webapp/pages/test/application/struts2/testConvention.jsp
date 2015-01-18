@@ -5,6 +5,7 @@
 <html>
   
   <body>
-    This is my JSP page. <br><br>
+   hello ${username}  <br><br>
+   hello ${age }
   </body>
 </html>
