@@ -1,5 +1,8 @@
 package com.aicai.service.test.mvc.strutstest.action.convetion;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
@@ -43,6 +46,8 @@ public class TestAction {
 	public String testConvention() {
 		username = "kk";
 		System.out.println("test struts convention");
+		HttpServletRequest request = ServletActionContext.getRequest();
+		System.out.println(request.getParameter("nihao"));
 		return "index";
 	}
 
