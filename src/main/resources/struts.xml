@@ -2,7 +2,7 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
 <struts>
 <include file="struts.config.xml" />
-	<constant name="struts.objectFactory" value="spring" />
+<!-- 	<constant name="struts.objectFactory" value="spring" /> -->
 <!-- 	<constant name="struts.objectFactory" value="struts" /> -->
 	<package name="hs" extends="struts-default">
     <action name="ioc" class="iocAction">

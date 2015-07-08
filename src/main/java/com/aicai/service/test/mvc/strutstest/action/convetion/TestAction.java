@@ -7,6 +7,9 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.aicai.service.login.service.MemberServiceI;
 
 /**
  * 总结常用的注解如下：
@@ -42,12 +45,16 @@ public class TestAction {
 	private String username;
 	private String age;
 	
+	@Autowired
+	MemberServiceI MemberServiceI;
+	
 	@Action("/testConvention")
 	public String testConvention() {
 		username = "kk";
 		System.out.println("test struts convention");
 		HttpServletRequest request = ServletActionContext.getRequest();
 		System.out.println(request.getParameter("nihao"));
+//		MemberServiceI.login(username, age, request, null);
 		return "index";
 	}
 

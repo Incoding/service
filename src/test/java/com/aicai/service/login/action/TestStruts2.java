@@ -1,16 +1,15 @@
 package com.aicai.service.login.action;
 
-import static org.junit.Assert.*;
-
 import org.apache.struts2.StrutsSpringTestCase;
-import org.apache.struts2.StrutsTestCase;
 import org.junit.Test;
+import org.springframework.mock.web.MockServletContext;
 
 import com.aicai.service.test.mvc.strutstest.action.convetion.TestAction;
 import com.opensymphony.xwork2.ActionProxy;
 
 /**
- * 还未整好
+ * http://struts.apache.org/docs/testing-actions.html
+ * 注意initServletMockObjects
  *
  */
 public class TestStruts2 extends StrutsSpringTestCase  {
@@ -18,7 +17,16 @@ public class TestStruts2 extends StrutsSpringTestCase  {
 	  private TestAction action;  
 	  private ActionProxy proxy;  
 	  
-	    private void init() {  
+	  
+	  
+	    @Override
+	protected void initServletMockObjects() {
+		// TODO Auto-generated method stub
+		super.initServletMockObjects();
+		servletContext = new MockServletContext("file://home/kk/git/service/src/main/webapp",resourceLoader);
+	}
+
+		private void init() {  
 	        proxy = getActionProxy("/test/testConvention"); //action url，可以写扩展名".action"也可以干脆不写  
 	        action = (TestAction) proxy.getAction();  
 	    }  
