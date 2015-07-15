@@ -12,7 +12,10 @@
 <!-- 使用struts-default默认的转换器，如果是rest的使用：rest-default，rest需要rest的jar插件 -->
  <constant name="struts.convention.default.parent.package" value="struts-default"/>
 <!-- #################################### -->
- <constant name="struts.convention.result.path" value="/pages" />
+<!--  <constant name="struts.convention.result.path" value="/pages" /> -->
+<!-- 测试得时候使用绝对路径 -->
+ <constant name="struts.convention.result.path" value="/pages/" />
+ 
 <!-- 设置struts的Action请求的后缀，支持多个时以逗号隔开。 -->
 <!--  <constant name="struts.action.extension" value="do" /> -->
 <!-- struts.convention.action.name.separator 这个属性是约定当一个Java 类有多个单词组合成的时候，映射的URL地址的时候访问的格式的分隔符。  -->
