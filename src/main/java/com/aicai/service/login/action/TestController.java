@@ -27,6 +27,14 @@ public class TestController {
 	private void print() {
 		System.out.println("hello world 3");
 	}
+	
+	@RequestMapping(value="testExceptionResolver")
+	public String testExceptionResolver(Model model){
+		if(true) {
+			throw new RuntimeException("自定义异常");
+		}
+		return "/test/test";
+	}
 
 	/**
 	 * 先去子容器找,找不到,再去父容器找
