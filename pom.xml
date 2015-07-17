@@ -130,17 +130,19 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
-			<scope>compile</scope>
+			<scope>provide</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.2</version>
+			<scope>provide</scope>
 		</dependency>
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+			<scope>provide</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-fileupload</groupId>
