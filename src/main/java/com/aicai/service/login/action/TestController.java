@@ -7,11 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping;
 import org.springframework.web.servlet.support.RequestContextUtils;
+
+import com.aicai.service.login.common.vo.User;
 
 @Controller
 public class TestController {
@@ -34,6 +37,11 @@ public class TestController {
 			throw new RuntimeException("自定义异常");
 		}
 		return "/test/test";
+	}
+	@RequestMapping(value="testModelAttribute")
+	public String testModelAttribute(@ModelAttribute()User user){
+		System.err.println(user);
+		return "/test/testModelAttribute";
 	}
 
 	/**
