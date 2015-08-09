@@ -25,7 +25,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 
 
-/**
+/**集成测试
  * http://andy-ghg.iteye.com/blog/1772215 </br>
  * http://jinnianshilongnian.iteye.com/blog/2007180</br>
  * http://jinnianshilongnian.iteye.com/blog/2004660</br>
@@ -46,7 +46,6 @@ public class TestControllerTest {
 
 	@Before
 	public void setUp() {
-		TestControllerTest testController = new TestControllerTest();
 		mockMvc = webAppContextSetup(wac).build();
 	}
 
