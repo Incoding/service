@@ -8,3 +8,7 @@
 
 rebel.xml
 rebel-remote.xml
+
+#idea config
+.idea/
+*.iml
