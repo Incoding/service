@@ -1,8 +1,6 @@
 package com.aicai.service.login.action;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-
+import com.aicai.service.login.common.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 import org.springframework.stereotype.Controller;
@@ -14,7 +12,8 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
-import com.aicai.service.login.common.vo.User;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class TestController {
@@ -24,8 +23,13 @@ public class TestController {
 	public String getjsp(Model model){
 		model.addAttribute("hello", "world1");
 		print();
-		return "/test/test";
+        System.out.println("nihaoa");
+        test();
+        return "/test/test";
 	}
+    public void test(){
+        System.out.println("\"nihao\" = " + "nihaao");
+    }
 
 	private void print() {
 		System.out.println("hello world 3");
