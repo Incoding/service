@@ -21,6 +21,7 @@ import com.aicai.service.login.action.LoginController;
 /**
  * http://andy-ghg.iteye.com/blog/1772215 </br>
  * http://jinnianshilongnian.iteye.com/blog/2004660</br>
+ * 这种测试可以经过interceptor,和exception resolver
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)  

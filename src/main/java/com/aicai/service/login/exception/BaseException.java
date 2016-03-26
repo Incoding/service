@@ -40,4 +40,8 @@ public class BaseException extends RuntimeException {
         return serialVersionUID;
     }
 
+    @Override
+    public synchronized Throwable fillInStackTrace() {
+        return this;
+    }
 }
