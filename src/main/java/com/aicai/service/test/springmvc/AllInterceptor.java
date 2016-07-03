@@ -24,6 +24,9 @@ public class AllInterceptor implements WebRequestInterceptor {
      */
     @Override
     public void postHandle(WebRequest request, ModelMap map) throws Exception {
+        if(map == null ){
+            return ;
+        }
         // TODO Auto-generated method stub
         for (String key:map.keySet())
             System.out.println(key + "-------------------------");;
