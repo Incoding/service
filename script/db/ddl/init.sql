@@ -1,7 +1,7 @@
 # create database
-create databease service ;
+# create databease test ;
 # create table
-CREATE TABLE `service`.`member` (
+CREATE TABLE `test`.`member` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `userId` VARCHAR(45) NOT NULL,
   `username` VARCHAR(45) NOT NULL,
