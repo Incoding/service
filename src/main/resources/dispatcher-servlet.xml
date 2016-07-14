@@ -31,8 +31,16 @@
 <!-- 	<mvc:resources mapping="/images/**" location="/images/" cache-period="31556926"/>   -->
 <!-- 	<mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>   -->
 <!-- 	<mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>   -->
-	 <!-- 全局异常配置 start -->  
-     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+    <!--处理权限异常 , 用来返回json 响应 -->
+    <bean class="com.aicai.service.test.springmvc.exceptionResolver.JsonResponseExceptionResolver">
+        <property name="order" value="-10000"/>
+    </bean>
+
+     <!--用来处理 权限异常 转向jsp -->
+    <bean class="com.aicai.service.test.springmvc.exceptionResolver.DefaultExceptionHandler"/>
+
+    <!-- 全局异常配置 start -->
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
          <property name="exceptionMappings">  
              <props>  
 <!--              自动跳转到/pages  /error/error页面  -->
@@ -81,4 +89,5 @@
     <mvc:interceptors>
         <bean class="com.aicai.service.test.springmvc.AllInterceptor"/>
     </mvc:interceptors>
+    <import resource="spring-mvc-shiro.xml"/>
 </beans>
